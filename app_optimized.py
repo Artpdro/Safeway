@@ -226,3 +226,11 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("**Dashboard desenvolvido por Arthur Pedro e Pedro Lacerda** 🤓🚀")
+
+
+
+with st.sidebar:
+    if st.button("Documentação"): 
+        st.markdown("<meta http-equiv=\"refresh\" content=\"0; url=http://localhost:5001\" />", unsafe_allow_html=True)
+
+
