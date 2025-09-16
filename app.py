@@ -149,67 +149,67 @@ DOCUMENTATION_TEMPLATE = """
     <div class="container">
         <div class="header">
             <h1>🚗 Safeway</h1>
-            <p>Sistema de Análise de Acidentes de Trânsito</p>
+            <p>Traffic Accident Analysis System</p>
         </div>
         
         <div class="content">
             <div class="section">
-                <h2>📋 Visão Geral</h2>
-                <p>O Safeway é uma plataforma completa para análise de dados de acidentes de trânsito no Brasil. 
-                O sistema combina dados do DATATRAN e IBGE para fornecer insights valiosos sobre segurança viária.</p>
+                <h2>📋 Overview</h2>
+                <p>Safeway is a comprehensive platform for analyzing traffic accident data in Brazil.
+The system combines data from DATATRAN and IBGE to provide valuable insights into road safety.</p>
                 
                 <div class="feature-grid">
                     <div class="feature-card">
-                        <h4>📊 Dashboard Interativo</h4>
-                        <p>Visualizações dinâmicas com gráficos e mapas de calor para análise de acidentes.</p>
+                        <h4>📊 Interactive Dashboard</h4>
+                        <p>Dynamic visualizations with graphs and heat maps for accident analysis.</p>
                     </div>
                     <div class="feature-card">
-                        <h4>🗺️ Mapas de Densidade</h4>
-                        <p>Identificação de trechos críticos e zonas de alto risco de acidentes.</p>
+                        <h4>🗺️ Density Maps</h4>
+                        <p>Identification of critical sections and high-risk accident zones.</p>
                     </div>
                     <div class="feature-card">
-                        <h4>🤖 Integração com IA</h4>
-                        <p>Chat inteligente para consultas sobre os dados usando Ollama/LLM.</p>
+                        <h4>🤖 AI integration</h4>
+                        <p>Smart chat for data queries using Ollama/LLM.</p>
                     </div>
                     <div class="feature-card">
-                        <h4>📈 Análise Temporal</h4>
-                        <p>Análise de padrões por horário, dia da semana e condições meteorológicas.</p>
+                        <h4>📈 Temporal Analysis</h4>
+                        <p>Pattern analysis by time, day of the week and weather conditions.</p>
                     </div>
                 </div>
             </div>
             
             <div class="section">
-                <h2>🚀 Como Usar</h2>
+                <h2>🚀 How to Use</h2>
                 
-                <h3>1. Acesso ao Dashboard</h3>
-                <p>Para acessar o dashboard principal de análise de acidentes:</p>
-                <a href="/dashboard" class="btn">🎯 Acessar Dashboard</a>
+                <h3>1. Access the Dashboard</h3>
+                <p>To access the main accident analysis dashboard:</p>
+                <a href="/dashboard" class="btn">🎯 Access Dashboard</a>
                 
-                <h3>2. Estrutura do Projeto</h3>
+                <h3>2. Project Structure</h3>
                 <div class="code-block">
 Safeway/
-├── app.py                 # Servidor Flask (Documentação)
-├── app_optimized.py       # Dashboard Streamlit
-├── auth.py               # Sistema de autenticação
-├── frontend/             # Interface React
-├── core/                 # Módulos principais
-├── data/                 # Dados processados
-└── pages/                # Páginas adicionais
+├── app.py                 # Flask Server (Documentation)
+├── app_optimized.py       # Streamlit Dashboard
+├── auth.py               # Authentication system
+├── frontend/             # React interface
+├── core/                 # Main modules
+├── data/                 # Processed data
+└── pages/                # Additional pages
                 </div>
                 
-                <h3>3. Instalação e Configuração</h3>
+                <h3>3. Installation and Configuration</h3>
                 <div class="code-block">
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/Artpdro/Safeway.git
 cd Safeway
 
-# Instale as dependências
+# Install dependencies
 pip install -r requirements.txt
 
-# Execute o servidor Flask (documentação)
+# Run the Flask server (documentation)
 python app.py
 
-# Execute o dashboard Streamlit (em outro terminal)
+# ERun the Streamlit dashboard (in another terminal)
 streamlit run app_optimized.py
                 </div>
             </div>
@@ -217,73 +217,73 @@ streamlit run app_optimized.py
             <div class="section">
                 <h2>🔧 API Endpoints</h2>
                 
-                <h3>Rotas Principais</h3>
+                <h3>Main Routes</h3>
                 <div class="api-endpoint">
-                    <strong>GET /</strong> - Página de documentação (esta página)
+                    <strong>GET /</strong> - Documentation page (this page)
                 </div>
                 <div class="api-endpoint">
-                    <strong>GET /dashboard</strong> - Redireciona para o dashboard Streamlit
+                    <strong>GET /dashboard</strong> - Redirects to the Streamlit dashboard
                 </div>
                 <div class="api-endpoint">
-                    <strong>GET /run_streamlit</strong> - Inicia o servidor Streamlit
+                    <strong>GET /run_streamlit</strong> - Start the Streamlit server
                 </div>
                 
                 <div class="warning">
-                    <strong>⚠️ Nota:</strong> O dashboard Streamlit roda na porta 8501. 
-                    Certifique-se de que esta porta esteja disponível.
+                    <strong>⚠️ Notice:</strong> The Streamlit dashboard run on port 8501. 
+                    Make sure this port is available.
                 </div>
             </div>
             
             <div class="section">
-                <h2>📊 Funcionalidades do Dashboard</h2>
+                <h2>📊 Supported Data</h2>
                 
-                <h3>Visualizações Disponíveis</h3>
+                <h3>Available Views</h3>
                 <ul style="margin-left: 20px;">
-                    <li><strong>Mapa de Calor:</strong> Acidentes por UF e tipo</li>
-                    <li><strong>Análise Temporal:</strong> Risco por horário do dia</li>
-                    <li><strong>Principais Causas:</strong> Top 10 causas de acidentes</li>
-                    <li><strong>Distribuição Semanal:</strong> Acidentes por dia da semana</li>
-                    <li><strong>Condições Meteorológicas:</strong> Impacto do clima nos acidentes</li>
-                    <li><strong>Mapa de Densidade:</strong> Localização geográfica dos acidentes</li>
+                    <li><strong>Heat Map:</strong> Accidents by State and Type</li>
+                    <li><strong>Temporal Analysis:</strong> Risk by time of day</li>
+                    <li><strong>Main Causes:</strong> Top 10 causes of accidents</li>
+                    <li><strong>Weekly Distribution:</strong> Accidents by day of the week</li>
+                    <li><strong>Weather Conditions:</strong> Impact of climate on accidents</li>
+                    <li><strong>Density Map:</strong> Geographic location of accidents</li>
                 </ul>
                 
-                <h3>Dados Suportados</h3>
+                <h3>Supported Data</h3>
                 <ul style="margin-left: 20px;">
                     <li>DATATRAN (2020-2025)</li>
-                    <li>Dados IBGE agregados</li>
-                    <li>Coordenadas geográficas</li>
-                    <li>Informações meteorológicas</li>
+                    <li>Aggregated IBGE data</li>
+                    <li>Geographic coordinates</li>
+                    <li>Weather information</li>
                 </ul>
             </div>
             
             <div class="section">
-                <h2>🤖 Integração com IA</h2>
-                <p>O sistema inclui integração com Ollama para consultas inteligentes sobre os dados:</p>
+                <h2>🤖 AI integration</h2>
+                <p>The system includes integration with Ollama for intelligent queries on the data:</p>
                 
                 <div class="code-block">
-# Instalar Ollama
+# Install Ollama
 curl -fsSL https://ollama.ai/install.sh | sh
 
-# Baixar modelo
+# Dowload model
 ollama pull llama3.1
 
-# O chat estará disponível no dashboard
+# The chat will be available on the dashboard
                 </div>
             </div>
             
             <div class="section">
-                <h2>👥 Equipe de Desenvolvimento</h2>
-                <p>Este projeto foi desenvolvido por:</p>
+                <h2>👥 Development Team</h2>
+                <p>This project was developed by:</p>
                 <ul style="margin-left: 20px;">
-                    <li><strong>Arthur Pedro</strong> - Desenvolvimento Backend e Análise de Dados</li>
-                    <li><strong>Pedro Lacerda</strong> - Desenvolvimento Frontend e Visualizações</li>
+                    <li><strong>Arthur Pedro</strong> - Backend Development and Data Analysis</li>
+                    <li><strong>Pedro Lacerda</strong> - Frontend Development and Visualizations</li>
                 </ul>
             </div>
         </div>
         
         <div class="footer">
-            <p>&copy; 2024 Safeway - Sistema de Análise de Acidentes de Trânsito</p>
-            <p>Desenvolvido com ❤️ para um trânsito mais seguro</p>
+            <p>&copy; 2024 Safeway - Traffic Accident Analysis System</p>
+            <p>Developed with ❤️ by a safer traffic</p>
         </div>
     </div>
 </body>
