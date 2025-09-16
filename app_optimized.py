@@ -218,14 +218,14 @@ else:
 
 def logout():
     st.session_state.clear()
-    st.switch_page(".\pages\login.py")
+    st.switch_page("login.py")
 
 with st.sidebar:
     if st.button("Sair"): 
         logout()
 
     st.markdown("---")
-    st.markdown("**Dashboard desenvolvido por Arthur Pedro e Pedro Lacerda** 🤓🚀")
+    st.markdown("**Dashboard desenvolvido por equipe Safeway** 🤓🚀")
 
 
 
