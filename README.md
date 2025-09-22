@@ -1,111 +1,115 @@
- # Dashboard de Análise de Acidentes de Trânsito
+# Traffic Accident Analysis Dashboard
 
-Este projeto implementa um dashboard interativo para análise de dados de acidentes de trânsito utilizando Streamlit, XGBoost e integração com LLM Llama 3.1 via Ollama.
+This project implements an interactive dashboard for analyzing traffic accident data using **Streamlit**, **XGBoost**, and **LLM Llama 3.1** integration via **Ollama**.
 
-## 🚀 Funcionalidades
+---
 
-### Dashboard Interativo
-- **Seleção de Ano:** Permite visualizar dados de acidentes por ano (2020-2025).
-- **Mapa de calor de acidentes** por UF e tipo
-- **Previsão de risco por horário** com gráficos de linha
-- **Análise de causas principais** com gráficos de barras horizontais
-- **Gráficos interativos** para acidentes por dia da semana e condições meteorológicas
-- **Mapa de Densidade de Risco de Acidentes:** Visualização da densidade de acidentes com base no risco previsto.
-- **Top 10 Trechos Críticos:** Tabela com os 10 trechos de rodovia com maior risco de acidentes.
+## 🚀 Features
 
-### Integração com LLM
-- **Llama 3.1 via Ollama** para análise contextual dos dados
-- **Interface de chat** para perguntas sobre os dados
-- **Respostas baseadas** no contexto dos dados carregados
+### Interactive Dashboard
+- **Year Selection:** Choose a year (2020-2025) to view accident data.
+- **Accident Heatmap** by state (UF) and type.
+- **Hourly Risk Prediction** with line charts.
+- **Main Cause Analysis** using horizontal bar charts.
+- **Interactive Charts** for accidents by day of the week and weather conditions.
+- **Accident Risk Density Map:** A visual representation of accident density based on predicted risk.
+- **Top 10 Critical Road Sections:** A table showing the 10 road segments with the highest accident risk.
 
-## 📋 Pré-requisitos
+### LLM Integration
+- **Llama 3.1 via Ollama** for contextual data analysis.
+- **Chat Interface** to ask questions about the data.
+- **Responses based** on the context of the loaded data.
 
-### Python e Dependências
+## 📋 Prerequisites
+
+### Python and Dependencies
+Install the required libraries with pip:
 ```bash
 pip install streamlit pandas plotly xgboost scikit-learn requests ollama numpy matplotlib seaborn tqdm jupyter IPython pathlib bcrypt python-dotenv uvicorn starlette itsdangerous authlib
-```
 
 ### Ollama (para LLM)
 ```bash
-# Instalar Ollama
-curl -fsSL https://ollama.ai/install.sh | sh
+# Install Ollama
+curl -fsSL [https://ollama.ai/install.sh](https://ollama.ai/install.sh) | sh
 
-# Iniciar o serviço
+# Start the service
 ollama serve
 
-# Baixar o modelo Llama 3.1
+# Download the Llama 3.1 model
 ollama pull llama3.1
 ```
 
-## 🗂️ Estrutura dos Dados
+## 🗂️ Data Structure
 
-O dashboard espera arquivos CSV com os seguintes padrões de nome e colunas principais:
+The dashboard expects CSV files with specific naming conventions and columns.
 
-- **Arquivos de Acidentes:** `acidentesYYYY_todas_causas_tipos.csv` (onde YYYY é o ano)
-- **Arquivos DataTran:** `datatranYYYY.csv` (onde YYYY é o ano)
+- **Accident Files:** `acidentesYYYY_todas_causas_tipos.csv` (where YYYY is the year)
+- **ataTran Files:** `datatranYYYY.csv` (where YYYY is the year)
 
-**Colunas principais esperadas:**
-- `data_inversa`: Data do acidente
-- `horario`: Hora do acidente
-- `uf`: Unidade Federativa
-- `km`: Quilômetro da rodovia
-- `causa_acidente`: Causa do acidente
-- `tipo_acidente`: Tipo do acidente
-- `classificacao_acidente`: Classificação (com/sem vítimas)
-- `condicao_metereologica`: Condições climáticas
-- `tipo_pista`: Tipo da pista
-- `dia_semana`: Dia da semana
-- `latitude`: Latitude do acidente (formato com vírgula ou ponto)
-- `longitude`: Longitude do acidente (formato com vírgula ou ponto)
+**Expected columns:**
+- `data_inversa`: Accident date
+- `horario`: Accident time
+- `uf`: Federal Unit (State)
+- `km`: Road kilometer
+- `causa_acidente`: Accident cause
+- `tipo_acidente`: Accident type
+- `classificacao_acidente`: Classification (with/without victims)
+- `condicao_metereologica`: Weather conditions
+- `tipo_pista`: Road type
+- `dia_semana`: Day of the week
+- `latitude`: Accident latitude (comma or dot format)
+- `longitude`: Accident longitude (comma or dot format)
 
-## 🚀 Como Executar (Windows)
+### 🚀 How to Run (Windows)
 
-### 1. Organizar os Dados
-Crie uma pasta chamada `upload` no mesmo diretório do `app_optimized.py` e coloque todos os arquivos CSV fornecidos dentro dela.
+### 1. Organize the Data
+Create a folder named `upload` in the same directory as `app_optimized.py` and place all the provided CSV files inside it.
 
-### 2. Instalar Dependências
-Abra o Prompt de Comando (CMD) ou PowerShell no diretório do projeto e execute:
+### 2. Install Dependencies
+Open Command Prompt (CMD) or PowerShell in the project directory and execute:
 ```cmd
 pip install -r requirements.txt
 ```
 
-### 3. Executar o Dashboard
-No mesmo Prompt de Comando (CMD) ou PowerShell, execute:
+### 3. Run the Dashboard
+In the same Command Prompt (CMD) or PowerShell, execute:
 ```cmd
 streamlit run app_optimized.py 
 ```
 
-### 4. Acessar no Navegador
-Abra seu navegador e acesse:
+### 4. Access in Browser
+Open your browser and navigate to:
 ```
 http://localhost:8501
 ```
 
-## 📊 Features do Dashboard
+## 📊 Dashboard Features
 
-### 1. Visualizações Principais
-- **Mapa de Calor:** Distribuição de acidentes por UF e tipo
-- **Gráfico de Linha:** Risco de acidentes por horário do dia
-- **Gráfico de Barras:** Top 10 causas de acidentes
-- **Gráfico Pizza:** Distribuição por dia da semana
-- **Gráfico de Barras:** Acidentes por condição meteorológica
+### 1. Main Visualizations
+- **Heatmap:** Distribution of accidents by state (UF) and type
+- **Line Chart:** Accident risk by time of day
+- **Bar Chart:** Top 10 accident causes
+- **Pie Chart:** Distribution by day of the week
+- **Bar Chart:** Accidents by weather condition
 
-### 2. Chat com LLM
-- **Interface de texto** para perguntas
-- **Contexto dos dados** fornecido automaticamente
-- **Respostas baseadas** nos dados analisados
+### 2. Chat with LLM
+- **Text Interface** for questions
+- **Data Context** provided automatically
+- **Responses based** on the analyzed data
 
-## 🔧 Configurações
 
-### Arquivos de Dados
-Os arquivos CSV devem estar na pasta `upload` no mesmo diretório do `app_optimized.py`.
 
-## 📈 Métricas e KPIs
+## 🔧 Configurations
 
-- **Total de Registros:** Número de acidentes analisados
-- **AUC-ROC Score:** Performance do modelo de classificação
-- **Acurácia:** Precisão das predições
-- **Importância das Features:** Quais variáveis mais influenciam o risco
+### Data Files
+The CSV files must be in the `upload` folder within the same directory as `app_optimized.py`.
 
-### Problema: Dados não carregam
-**Solução:** Verificar se os arquivos CSV estão na pasta `upload` e se o encoding está correto (`encoding=\'latin1\'`).
+## 📈 Metrics and KPIs
+
+- **Total Records:** Number of accidents analyzed
+- **AUC-ROC Score:** Classifier model performance
+- **Accuracy:** Prediction precision
+- **Feature Importance:** Which variables most influence risk
+
+### Problem: Data Not Loading
+**Solution:** Check if the CSV files are in the `upload` folder and if the encoding is correct (`encoding=\'latin1\'`)
