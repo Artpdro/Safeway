@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safeway - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .api-endpoint {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚗 Safeway</h1>
+            <p>Traffic Accident Analysis System</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📋 Overview</h2>
+                <p>Safeway is a comprehensive platform for analyzing traffic accident data in Brazil.
+The system combines data from DATATRAN and IBGE to provide valuable insights into road safety.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>📊 Interactive Dashboard</h4>
+                        <p>Dynamic visualizations with graphs and heat maps for accident analysis.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🗺️ Density Maps</h4>
+                        <p>Identification of critical sections and high-risk accident zones.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🤖 AI integration</h4>
+                        <p>Smart chat for data queries using Ollama/LLM.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📈 Temporal Analysis</h4>
+                        <p>Pattern analysis by time, day of the week and weather conditions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🚀 How to Use</h2>
+                
+                <h3>1. Access the Dashboard</h3>
+                <p>To access the main accident analysis dashboard:</p>
+                <a href="http://localhost:8501" class="btn">🎯 Access Dashboard</a>
+                
+                <h3>2. Project Structure</h3>
+                <div class="code-block">
+Safeway/
+├── app.py                 # Flask Server (Documentation)
+├── app_optimized.py       # Streamlit Dashboard
+├── auth.py               # Authentication system
+├── frontend/             # React interface
+├── core/                 # Main modules
+├── data/                 # Processed data
+└── pages/                # Additional pages
+                </div>
+                
+                <h3>3. Installation and Configuration</h3>
+                <div class="code-block">
+# Clone the repository
+git clone https://github.com/Artpdro/Safeway.git
+cd Safeway
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Flask server (documentation)
+python app.py
+
+# ERun the Streamlit dashboard (in another terminal)
+streamlit run app_optimized.py
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🔧 API Endpoints</h2>
+                
+                <h3>Main Routes</h3>
+                <div class="api-endpoint">
+                    <strong>GET /</strong> - Documentation page (this page)
+                </div>
+                <div class="api-endpoint">
+                    <strong>GET /dashboard</strong> - Redirects to the Streamlit dashboard
+                </div>
+                <div class="api-endpoint">
+                    <strong>GET /run_streamlit</strong> - Start the Streamlit server
+                </div>
+                
+                <div class="warning">
+                    <strong>⚠️ Notice:</strong> The Streamlit dashboard run on port 8501. 
+                    Make sure this port is available.
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📊 Supported Data</h2>
+                
+                <h3>Available Views</h3>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Heat Map:</strong> Accidents by State and Type</li>
+                    <li><strong>Temporal Analysis:</strong> Risk by time of day</li>
+                    <li><strong>Main Causes:</strong> Top 10 causes of accidents</li>
+                    <li><strong>Weekly Distribution:</strong> Accidents by day of the week</li>
+                    <li><strong>Weather Conditions:</strong> Impact of climate on accidents</li>
+                    <li><strong>Density Map:</strong> Geographic location of accidents</li>
+                </ul>
+                
+                <h3>Supported Data</h3>
+                <ul style="margin-left: 20px;">
+                    <li>DATATRAN (2020-2025)</li>
+                    <li>Aggregated IBGE data</li>
+                    <li>Geographic coordinates</li>
+                    <li>Weather information</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>🤖 AI integration</h2>
+                <p>The system includes integration with Ollama for intelligent queries on the data:</p>
+                
+                <div class="code-block">
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Dowload model
+ollama pull llama3.1
+
+# The chat will be available on the dashboard
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>👥 Development Team</h2>
+                <p>This project was developed by:</p>
+                <ul style="margin-left: 20px;">
+                    <li>Team Safeway<strong></strong> - Backend Development, Frontend Development and Data Analysis</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 Safeway - Traffic Accident Analysis System</p>
+            <p>Developed with ❤️ by a safer traffic</p>
+        </div>
+    </div>
+</body>
+</html>
